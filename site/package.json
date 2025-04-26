@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "site",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,10 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.3",
-    "@astrojs/tailwind": "^5.1.4",
-    "@fontsource/fira-code": "^5.1.1",
-    "astro": "^5.1.1",
-    "tailwindcss": "^3.4.17"
+    "@fontsource/fira-code": "^5.2.5",
+    "astro": "^5.7.10"
   }
 }
