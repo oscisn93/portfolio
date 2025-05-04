@@ -1,13 +1,25 @@
 :root {
-  --lavender: #E9E6FF;
-  --spring-green: #5EFC8D;
-  --celadon: #A1E5AB;
-  --charcoal: #2E5266;
-  --dark-purple: #1C0B19;
+  --lavender: #e9e6ff;
+  --spring-green: #5efc8d;
+  --celadon: #a1e5ab;
+  --charcoal: #2e5266;
+  --dark-purple: #1c0b19;
+  --forest-green: #142610;
+  --rustic-yellow: #a6943d;
+  --dark-slate: #171830;
   --full-screen-height: 100vh;
   --full-screen-width: 100vw;
   --full: 100%;
-  --font-fira-code: 'Fira Code', monospace;
+  --font-firacode: "Fira Code", monospace;
+  --font-oswald: "Oswald", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-pacifico: "Pacifico", cursive;
+  --small-text: 12px;
+  --medium-text: 16px;
+  --large-text: 20px;
+  --x-large-text: 24px;
+  --xx-large-text: 28px;
+  --xxx-large-text: 36px;
 }
 
 * {
@@ -53,9 +65,9 @@ header {
 
 .header-title {
   padding: 0px;
-  font-size: 20px;
+  font-size: var(--large-text);
   font-weight: 900;
-  color: var(--lavender)
+  color: var(--lavender);
 }
 
 .github-badge-wrapper {
@@ -75,7 +87,7 @@ header {
   display: flex;
   gap: 2px;
   justify-content: space-evenly;
-  font-size: 16px;
+  font-size: var(--medium-text);
   font-weight: 700;
   color: var(--spring-green);
   text-decoration: none;
@@ -89,65 +101,18 @@ nav {
   display: flex;
   padding: 4px;
   border-top: 1px solid var(--lavender);
-  background: linear-gradient(to top, var(--celadon), var(--spring-green), forestgreen);
+  background: linear-gradient(
+    to top,
+    var(--celadon),
+    var(--spring-green),
+    forestgreen
+  );
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--dark-purple);
   font-weight: 700;
-}
-
-.hero-wrapper {
-  width: var(--full-screen-width);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 8px 0;
-  gap: 4px;
-  background-image: url('https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTcxNDAyODIwNw&ixlib=rb-4.0.3&q=80&w=1600');
-  aspect-ratio: 16/9;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.title-container {
-  margin-left: 10px;
-  width: 224px;
-  font-size: 16px;
-  padding: 8px;
-  background: linear-gradient(to bottom, var(--dark-purple), black);
-  border: 1px solid var(--spring-green);
-  border-radius: 4px;
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  color: var(--lavender);
-  font-weight: 600;
-}
-.dev-text {
-  color: var(--spring-green);
-  font-weight: 900;
-}
-.portfolio-text {
-  color: var(--celadon);
-  font-weight: 900;
-}
-.bio-container {
-  align-self: end;
-  margin-right: 10px;
-  width: 320px;
-  padding: 4px;
-  background-image: radial-gradient(ellipse, var(--dark-purple), black);
-  color: var(--lavender);
-  font-size: 12px;
-  border: 1px solid var(--celadon);
-  border-radius: 6px;
-  /* md:m-0 md:absolute md:bottom-2 md:right-2 p-4 md:w-3/5 md:max-w-[500px] text-md text-white border-2 border-emerald-400 rounded-md"> */
 }
 
 @media screen and (min-width: 800px) {

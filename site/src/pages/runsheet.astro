@@ -1,0 +1,276 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getTimestamp } from "../lib/runsheet";
+
+const { date, time } = getTimestamp();
+---
+
+<BaseLayout>
+    <h1 class="sheet-title">Engine 312 Run Sheet</h1>
+    <form>
+        <fieldset class="timestamp-fields">
+            <label>Date:</label>
+            <input id="date" type="date" name="date" value={date} disabled />
+            <label>Time:</label>
+            <input type="text" id="time" name="time" value={time} disabled />
+        </fieldset>
+        <h2 class="fieldset-title">Incident Type</h2>
+        <fieldset class="incident-type-fields">
+            <div class="row">
+                <label for="vegetation-fire">Vegetation Fire</label>
+                <input type="checkbox" id="vegetation-fire" name="vegetation-fire" />
+                <label for="hazmat">Hazmat</label>
+                <input type="checkbox" id="hazmat" name="hazmat" />
+            </div>
+            <div class="row">
+                <label for="vehicle-fire">Vehicle Fire</label>
+                <input type="checkbox" id="vehicle-fire" name="vehicle-fire" />
+                <label for="medical-aid">Medical Aid/TC</label>
+                <input type="checkbox" id="medical-aid" name="medical-aid" />
+            </div>
+            <div class="row">
+                <label>Structural Fire</label>
+                <input type="checkbox" id="structural-fire" name="structural-fire" />
+                <label>Smoke Check</label>
+                <input type="checkbox" id="smoke-check" name="smoke-check" />
+            </div>
+            <div class="row">
+                <label>F/A</label>
+                <input type="checkbox" id="f-a" name="f-a" />
+                <label>Cancel</label>
+                <input type="checkbox" id="cancel" name="cancel" />
+            </div>
+        </fieldset>
+        <fieldset class="detail-fields">
+            <div class="row">
+                <label for="area">Area</label>
+                <input type="text" id="area" name="area" />
+            </div>
+            <div class="row">
+                <label for="size">Size</label>
+                <input type="text" name="size" id="size" />
+            </div>
+            <div class="row">
+                <label for="onscene">On Scene</label>
+                <input type="text" name="onscence" id="onscence" />
+            </div>
+            <div class="row">
+                <label for="incname">Inc. Name/#</label>
+                <input type="text" name="incname" id="incname" />
+            </div>
+            <div class="row">
+                <label for="inquarters">In Quarters</label>
+                <input type="text" name="inquarters" id="inquarters" />
+            </div>
+            <div class="row">
+                <label for="pcode">P-Code</label>
+                <input type="text" name="pcode" id="pcode" />
+            </div>
+        </fieldset>
+        <fieldset class="initial-fields">
+            <div class="row">
+                <label for="lc">L.C.</label>
+                <input type="checkbox" name="lc" id="lc">
+                <label for="cg">C.G.</label>
+                <input type="checkbox" name="cg" id="cg">
+                <label for="jm">J.M.</label>
+                <input type="checkbox" name="jm" id="jm">
+                <label for="bu">B.U.</label>
+                <input type="checkbox" name="bu" id="bu">
+            </div>
+            <div class="row">
+                <label for="ah">A.H.</label>
+                <input type="checkbox" name="am" id="am">
+                <label for="bd">B.D.</label>
+                <input type="checkbox" name="bd" id="bd">
+                <label for="mm">M.M.</label>
+                <input type="checkbox" name="mm" id="mm">
+                <label for="bk">B.K.</label>
+                <input type="checkbox" name="bk" id="bk">
+            </div>
+            </fieldset>
+        <fieldset class="summary-field">
+            <label for="summary">Summary</label>
+            <textarea name="summary" id="summary">
+            </textarea>
+            <button id="submit-runsheet-btn" type="submit">SAVE</button>
+        </fieldset>
+    </form>
+</BaseLayout>
+<style>
+    form {
+        width: var(--full-screen-width);
+        height: var(--full-screen-height);
+        background-color: var(--forest-green);
+        background-op;
+        display: flex;
+        flex-direction: column;
+        font-size: var(--small-medium);
+        font-family: var(--font-poppins);
+        font-weight: 500;
+    }
+    fieldset {
+        display: flex;
+        width: var(--full);
+        margin: 0px;
+        border: none;
+        padding: 12px 2px;
+    }
+    input {
+        min-height: 20px;
+        padding: 2px;
+        border: thin;
+        border-radius: 1.5px;
+    }
+    
+    .sheet-title {
+        width: var(--full);
+        font-size: var(--xx-large-text);
+        font-family: var(--font-poppins);
+        font-weight: 700;
+        text-align: center;
+        padding: 12px 0px;
+        background-image: 
+            linear-gradient(to right,
+                var(--dark-purple),
+                var(--forest-green),
+                var(--dark-purple));
+        color: var(--rustic-yellow);
+    }
+    .fieldset-title {
+        width: var(--full);
+        display: flex;
+        justify-content: center;
+        color: var(--rustic-yellow);
+        background-image: linear-gradient(to right, var(--dark-purple), var(--forest-green),  var(--dark-purple));
+        padding: 8px;
+        font-size: var(--xx-large-text);
+        font-family: var(--font-poppins);
+        font-weight: 700;
+    }
+    .timestamp-fields {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: var(--rustic-yellow);
+        color: var(--forest-green);
+    }
+    .timestamp-fields input {
+        border-radius: 2px;
+        padding: 0px;
+        font-size: var(--large-text);
+        font-weight: 600;
+        font-family: var(--font-fira-code);
+        color: var(--forest-green);
+    }
+    #date {
+        width: 150px;
+    }
+
+    #time {
+        width: 60px;
+    }
+
+    .incident-type-fields {
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        background-color: var(--rustic-yellow);
+    }
+    .row {
+        width: var(--full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+    .incident-type-fields > .row > label {
+        width: 40%;
+    }
+    .incident-type-fields > .row > input {
+        width: 64px;
+        padding: 2px;
+    }
+    .detail-fields {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background-image: linear-gradient(to right, var(--dark-purple), var(--forest-green),  var(--dark-purple));
+        background-color: var(--forest-green);
+        color: var(--rustic-yellow);
+        padding: 12px 0px;
+    }
+    .detail-fields .row {
+        display: flex;
+        padding: 0px;
+        width: var(--full);
+        align-items: center;
+        justify-content: center;
+        border: none;
+    }
+
+    .detail-fields .row label {
+        width: 22%;
+        font-size: var(--small-text);
+    }
+    
+    .detail-fields .row input {
+        width: 55%;
+    }
+    
+    .initial-fields {
+        display: flex;
+        background-color: var(--rustic-yellow);
+        color: var(--forest-green);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 8px;
+        font-family: var(--font-pacifico);
+        font-weight: 700;
+    }
+    .initial-fields > .row > label {
+        font-weight: 900;
+        width: 8%;
+    }
+    .initial-fields > .row > input {
+        border: none;
+        width: 10%;
+    }
+    .summary-field {
+        display: flex;
+        height: var(--full);
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        background-image: linear-gradient(to bottom, var(--forest-green), var(--dark-purple));
+    }
+    .summary-field > label {
+        text-align: center;
+        font-size: 16px;
+        color: var(--rustic-yellow);
+    }
+    textarea {
+        font-size: var(--small-text);
+        padding: 2px;
+        text-align: start;
+        height: 160px;
+        width: 320px;
+        box-shadow: 8px 8px 2px var(--rustic-yellow);
+    }
+    #submit-runsheet-btn {
+        margin: 12px auto;
+        width: 160px;
+        height: 48px;
+        border: none;
+        font-size: var(--medium-text);
+        font-weight: 900;
+        background-color: var(--rustic-yellow);
+        color: var(--forest-green);
+        border-radius: 2px;
+    }
+    input:checked {
+        background-color: var(--spring-green);
+    }
+</style>

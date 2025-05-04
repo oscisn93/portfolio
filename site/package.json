@@ -9,7 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource-variable/oswald": "^5.2.5",
     "@fontsource/fira-code": "^5.2.5",
+    "@fontsource/pacifico": "^5.2.5",
+    "@fontsource/poppins": "^5.2.6",
     "astro": "^5.7.10"
   }
 }

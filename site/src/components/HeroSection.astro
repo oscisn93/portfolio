@@ -18,3 +18,65 @@
     </p>
   </div>
 </section>
+
+<style>
+  .hero-wrapper {
+    width: var(--full-screen-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 0;
+    gap: 4px;
+    background-image: url('https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTcxNDAyODIwNw&ixlib=rb-4.0.3&q=80&w=1600');
+    aspect-ratio: 16/9;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .title-container {
+    margin-left: 10px;
+    width: 224px;
+    font-size: 16px;
+    padding: 8px;
+    background: linear-gradient(to bottom, var(--dark-purple), black);
+    border: 1px solid var(--spring-green);
+    border-radius: 4px;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    color: var(--lavender);
+    font-weight: 600;
+  }
+  .dev-text {
+    color: var(--spring-green);
+    font-weight: 900;
+  }
+  .portfolio-text {
+    color: var(--celadon);
+    font-weight: 900;
+  }
+  .bio-container {
+    align-self: end;
+    margin-right: 10px;
+    width: 320px;
+    padding: 4px;
+    background-image: radial-gradient(ellipse, var(--dark-purple), black);
+    color: var(--lavender);
+    font-size: 12px;
+    border: 1px solid var(--celadon);
+    border-radius: 6px;
+  }
+  @media screen and (min-width: 800px) {
+    .bio-container{
+      margin: 0px;
+      position: absolute;
+      bottom: 10px;
+      width: 400px;
+      max-width: 500px;
+    }
+  }
+</style>

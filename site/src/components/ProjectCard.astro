@@ -3,13 +3,58 @@ import type { Project } from "../lib/constants.ts";
 const { project } = Astro.props as { project: Project; }
 ---
 
-<div class="flex flex-col items-center justify-center gap-2 rounded-md border-2 border-emerald-400 items-center max-w-[440px] min-h-[640px] bg-emerald-600 font-semibold">
-  <h1 class="w-[90%] text-center text-emerald-400 font-extrabold text-3xl bg-emerald-800 bg-opacity-70 px-2 border-2 border-emerald-900 rounded-sm">{project.name}</h1>
-  <img class="h-[200px] max-w-[80%] rounded-sm" src={project.url} alt={`${project.name} official logo`} title={`${project.name} official logo`}>
-  <div class="flex flex-col gap-2 bg-gradient-to-b from-stone-950 to-emerald-950 bg-opacity-80 border-2 border-emerald-700 rounded-sm py-4 px-2 text-m w-[95%] h-[320px]">
-    <h2 class="text-emerald-300 font-extrabold text-lg">What's it about?</h2>
+<div class="project-card">
+  <h1 class="project-title">{project.name}</h1>
+  {project.image? 
+  <img class="project-img" src={project.image} alt={`${project.name} official logo`} title={`${project.name} official logo`}>: null}
+  <div class="project-info">
     <p class="text-emerald-100 py-2">{project.description}</p>
     <h2 class="text-emerald-300 font-extrabold text-lg">What was this built with?</h2>
     <p>Built using: {project.technologies.join(', ')}
   </div>
 </div>
+
+<style>
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    border-radius: 6px;
+    border: 2px solid var(--celadon);
+    max-width: 440px;
+    min-height: 640px;
+    background-color: var(--spring-green);
+    font-weight: 700;
+  }
+  .project-title {
+    width: 90%;
+    text-align: center;
+    color: var(--charcoal);
+    font-weight: 900;
+    font-size: 24px;
+    background-color: var(--celadon);
+    opacity: 70%;
+    padding: 0px 2px;
+    border: 2px solid darkgreen;
+    border-radius: 2px;
+  }
+  .project-img {
+    height: 200px;
+    max-width: 80%;
+    border-radius: 2px;
+  }
+  .project-info {
+    display:flex;
+    flex-direction: column;
+    gap: 2px;
+    background-image: linear-gradient(to bottom, var(--dark-purple), var(--spring-green));
+    border: 2px solid limegreen;
+    border-radius: 2px;
+    padding: 4px 2px;
+    font-size: 12px;
+    width: 90%;
+    height: 320px;
+  }
+</style>
