@@ -3,16 +3,17 @@ import type { Project } from "../lib/constants.ts";
 const { project } = Astro.props as { project: Project; }
 ---
 
-<div class="project-card">
+<article class="project-card">
   <h1 class="project-title">{project.name}</h1>
-  {project.image? 
-  <img class="project-img" src={project.image} alt={`${project.name} official logo`} title={`${project.name} official logo`}>: null}
+  { project.image ? 
+    <img class="project-img" src={project.image} alt={`${project.name} official logo`} title={`${project.name} official logo`}>
+    : null }
   <div class="project-info">
     <p class="text-emerald-100 py-2">{project.description}</p>
     <h2 class="text-emerald-300 font-extrabold text-lg">What was this built with?</h2>
     <p>Built using: {project.technologies.join(', ')}
   </div>
-</div>
+</article>
 
 <style>
   .project-card {

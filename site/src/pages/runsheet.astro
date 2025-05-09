@@ -1,8 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getTimestamp } from "../lib/runsheet";
 
-const { date, time } = getTimestamp();
+// const d = (new Date()).toLocaleString('en-US', { timeZone: 'America/Los_Angeles'});
+const d = (new Date());
+d.setTime(d.getTime() - d.getTimezoneOffset() * 60000);
+const [date, t] = d.toISOString().split("T");
+const time = t.split(":").splice(0, 2).join(":")
 ---
 
 <BaseLayout>
@@ -97,6 +100,22 @@ const { date, time } = getTimestamp();
         </fieldset>
     </form>
 </BaseLayout>
+<script>
+    let responseMessage: string;
+
+    async function submit(e: SubmitEvent) {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget as HTMLFormElement);
+        const response = await fetch("/api/feedback", {
+            method: "POST",
+            body: formData
+        });
+        const data = await response.json();
+        responseMessage = data.message;
+    }
+    const formElement = document.getElementsByTagName("form")[0];
+    formElement.onsubmit = submit;
+</script>
 <style>
     form {
         width: var(--full-screen-width);

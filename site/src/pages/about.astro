@@ -1,9 +1,31 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import GitHubAPI from "../lib/github";
+import type { GitHubEvent } from "../lib/types";
+
+const events = await GitHubAPI.getLatestEvents();
 ---
 
 <Layout>
-    <h1>About Oscar Cisneros</h1>
-    <h2>Fullstack Software Engineer and Web Development Instructor</h2>
-    <p>I am currently building real-world knowledge and experience with web technologies and utilizing this to support local businesses by consulting with and developing, implementing, and deploying affordable websites and web services that promote business and brand growth, and minimize costs while maximizing quality and ensuring the appropriate scaling techniques according to engagement and sales trends.</p>
+  <h1>About Oscar Cisneros</h1>
+  <h2>Fullstack Software Engineer and Web Development Instructor</h2>
+  <p>
+    I am curraently building real-world knowledge and experience with web
+    technologies and utilizing this to support local businesses by consulting
+    with and developing, implementing, and deploying affordable websites and web
+    services that promote business and brand growth, and minimize costs while
+    maximizing quality and ensuring the appropriate scaling techniques according
+    to engagement and sales trends.
+  </p>
+  {
+    events.map((event: GitHubEvent) => (
+      <article>
+        <div>
+          <h1>{event.type}</h1>
+          <h2>By: {event.repo.url}</h2>
+          <img src={event.actor.avatar_url} width="50" height="50" />
+        </div>
+      </article>
+    ))
+  }
 </Layout>

@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@fontsource-variable/oswald": "^5.2.5",
-    "@fontsource/fira-code": "^5.2.5",
+    "@fontsource/fira-code": "^5.2.6",
     "@fontsource/pacifico": "^5.2.5",
     "@fontsource/poppins": "^5.2.6",
-    "astro": "^5.7.10"
+    "@octokit/types": "^14.1.0",
+    "astro": "^5.8.1",
+    "octokit": "^5.0.3"
   }
 }
