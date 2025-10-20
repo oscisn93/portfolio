@@ -1,11 +1,9 @@
 <header>
   <div class="header-wrapper">
-    <h1 class="header-title">
-      Oscar Cisneros
-    </h1>
-    <h2 class="header-title">
-      Fullstack Software Engineer 
-    </h1>
+    <div>
+    <h1 class="header-title">Oscar Cisneros</h1>
+    <h2 class="header-subtitle">Software Engineer</h2>
+  </div>
     <div class="github-badge-wrapper">
       <a
         class="github-badge"
@@ -27,17 +25,92 @@
   </div>
   <nav>
     <div class="nav-link-wrapper">
-      <a href="/" title="Home" class="nav-link">
-        Home
-      </a>
+      <a href="/" title="Home" class="nav-link"> Home </a>
       &ThickSpace; | &ThickSpace;
-      <a href="/about/" title="About" class="nav-link">
-        About
-      </a>
+      <a href="/about/" title="About" class="nav-link"> About </a>
       &ThickSpace; | &ThickSpace;
-      <a href="/blog/" title="Blog" class="nav-link">
-        Blog
-      </a>
+      <a href="/blog/" title="Blog" class="nav-link"> Blog </a>
     </div>
   </nav>
 </header>
+
+<style>
+  header {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .header-wrapper {
+    padding: 4px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, var(--forest-green), var(--dark-purple));
+  }
+
+  .header-title {
+    font-family: var(--font-poppins);
+    color: aliceblue;
+  }
+
+  .header-subtitle {
+    color: var(--spring-green);
+  }
+
+  .github-badge-wrapper {
+    width: 120px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--dark-purple);
+    border: 1px solid gray;
+  }
+
+  .github-badge {
+    width: 100%;
+    display: flex;
+    gap: 2px;
+    justify-content: space-evenly;
+    font-size: var(--medium-text);
+    font-weight: 700;
+    color: var(--celadon);
+    text-decoration: none;
+  }
+
+  .sr-only {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    padding: 4px;
+    border-top: 1px solid var(--lavender);
+    background: linear-gradient(
+      to top,
+      var(--celadon),
+      var(--spring-green),
+      forestgreen
+    );
+  }
+
+  .nav-link {
+    text-decoration: none;
+    font-family: var(--font-oswald);
+    color: var(--dark-purple);
+    font-weight: 700;
+  }
+
+  @media screen and (min-width: 800px) {
+    .hero_wrapper {
+      position: relative;
+    }
+    .title-container {
+      width: 480px;
+      position: absolute;
+      top: 200px;
+      left: 60px;
+    }
+  }
+</style>

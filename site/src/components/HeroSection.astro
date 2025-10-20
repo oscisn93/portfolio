@@ -1,32 +1,17 @@
-<section class="hero-wrapper">
-  <div class="title-container">
-    <h2 class="title">
-      <p>Welcome to my</p>
-      <span class="dev-text">Developer</span>
-      <p class="portfolio-text">Porfolio</p>
-    </h2>
-  </div>
+<div class="hero-wrapper">
   <div class="bio-container">
-    <p class="mb-2 p-1">
-      Hello, my name is <strong>Oscar</strong>, and I am a <strong>Software Developer</strong> based out of <strong>Orange County, California</strong>.
+    <p>
+      Hello, I am <strong>Oscar The Dev</strong>, and I am a <strong>Software Engineer Consultant</strong> based out of <strong>Riverside, California</strong>.
     </p>
-    <p class="p-1">
-      I have worked with a variety of programming languages and technologies including:
-      <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>Python</strong>, <strong>Go</strong>, <strong>C</strong>, <strong>C++</strong>, and <strong>Rust</strong>.
-      I am always looking to learn new things and improve my skills as a developer, and ultimately hope to become a backend developer with knowledge of Dev Ops.
-      A recent graduate of CSU Fullerton with a B.S. in Computer Science, I am currently employed as a Web Development Remote Instructor with The Last Mile, an nonprofit organization which aims to unlock the full potential of justice-impacted individuals through technology education.
+    <p>
+      I use my knowledge of <strong>Computer Science</strong> and <strong>Software Development</strong> to enhance business efficiency and utilization of cutting edge technologies, including <strong>Aritifical Intelligence</strong>.
     </p>
   </div>
-</section>
+</div>
 
 <style>
   .hero-wrapper {
-    width: var(--full-screen-width);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 8px 0;
-    gap: 4px;
+    width: 100vw;
     background-image: url('https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTcxNDAyODIwNw&ixlib=rb-4.0.3&q=80&w=1600');
     aspect-ratio: 16/9;
     background-position: center;
@@ -34,49 +19,28 @@
     background-repeat: no-repeat;
   }
 
-  .title-container {
-    margin-left: 10px;
-    width: 224px;
-    font-size: 16px;
-    padding: 8px;
-    background: linear-gradient(to bottom, var(--dark-purple), black);
+  .bio-container {
+    margin: 16px;
     border: 1px solid var(--spring-green);
     border-radius: 4px;
+    padding: 8px;
+    background-image: linear-gradient(var(--dark-purple), var(--dark-slate));
+    color: aliceblue;
+    font-family: var(--font-poppins);
+    max-width: 300px;
   }
 
-  .title {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    color: var(--lavender);
-    font-weight: 600;
-  }
-  .dev-text {
-    color: var(--spring-green);
-    font-weight: 900;
-  }
-  .portfolio-text {
+  strong {
     color: var(--celadon);
-    font-weight: 900;
   }
-  .bio-container {
-    align-self: end;
-    margin-right: 10px;
-    width: 320px;
-    padding: 4px;
-    background-image: radial-gradient(ellipse, var(--dark-purple), black);
-    color: var(--lavender);
-    font-size: 12px;
-    border: 1px solid var(--celadon);
-    border-radius: 6px;
-  }
-  @media screen and (min-width: 800px) {
+
+
+  /* @media screen and (min-width: 800px) {
     .bio-container{
-      margin: 0px;
       position: absolute;
       bottom: 10px;
       width: 400px;
       max-width: 500px;
     }
-  }
+  } */
 </style>

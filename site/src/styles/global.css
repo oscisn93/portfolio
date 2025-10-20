@@ -7,9 +7,6 @@
   --forest-green: #142610;
   --rustic-yellow: #a6943d;
   --dark-slate: #171830;
-  --full-screen-height: 100vh;
-  --full-screen-width: 100vw;
-  --full: 100%;
   --font-firacode: "Fira Code", monospace;
   --font-oswald: "Oswald", sans-serif;
   --font-poppins: "Poppins", sans-serif;
@@ -28,101 +25,23 @@
 }
 
 body {
-  width: var(--full-screen-width);
-  height: var(--full-screen-height);
+  width: 100vw;
+  height: 100vh;
   background-color: var(--charcoal);
   font-family: var(--font-fira-code);
 }
 
 main {
-  height: var(--full);
-  width: var(--full);
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0px;
 }
 
 footer {
-  width: var(--full);
+  width: 100%;
   text-align: center;
   padding-top: 24px;
 }
 
-header {
-  width: var(--full);
-  height: fit-content;
-}
-
-.header-wrapper {
-  width: var(--full);
-  padding: 16px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: center;
-  background: linear-gradient(to right, black, var(--dark-purple));
-}
-
-.header-title {
-  padding: 0px;
-  font-size: var(--large-text);
-  font-weight: 900;
-  color: var(--lavender);
-}
-
-.github-badge-wrapper {
-  margin-top: 8px;
-  width: 128px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background: var(--dark-purple);
-  border: 1px solid gray;
-}
-
-.github-badge {
-  width: var(--full);
-  display: flex;
-  gap: 2px;
-  justify-content: space-evenly;
-  font-size: var(--medium-text);
-  font-weight: 700;
-  color: var(--spring-green);
-  text-decoration: none;
-}
-
-.sr-only {
-  display: none;
-}
-
-nav {
-  display: flex;
-  padding: 4px;
-  border-top: 1px solid var(--lavender);
-  background: linear-gradient(
-    to top,
-    var(--celadon),
-    var(--spring-green),
-    forestgreen
-  );
-}
-
-.nav-link {
-  text-decoration: none;
-  color: var(--dark-purple);
-  font-weight: 700;
-}
-
-@media screen and (min-width: 800px) {
-  .hero_wrapper {
-    position: relative;
-  }
-  .title-container {
-    width: 480px;
-    position: absolute;
-    top: 200px;
-    left: 60px;
-  }
-}

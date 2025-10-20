@@ -85,40 +85,6 @@ export const projectSchema = z.object({
 const invalid_type_error = "Invalid type provided for this field.";
 const required_error = "This fields must not be blank";
 
-export const runsheetSchema = z.object({
-  date: z.string({ invalid_type_error, required_error }).date(),
-  time: z.string({ invalid_type_error, required_error }).time(),
-  incidentType: z
-    .array(
-      z.enum([
-        "vegetation",
-        "vehicle",
-        "structural",
-        "f-a",
-        "hazmat",
-        "medical-aid",
-        "smoke-check",
-        "cancel",
-      ])
-    )
-    .nonempty(),
-  area: z.string({ required_error }),
-  size: z.number({ required_error }),
-  onScene: z.string({ required_error }),
-  incNameNum: z.number({ required_error }),
-  inQuarters: z.string({ required_error }),
-  pCode: z.string({ required_error }),
-  personnel: z
-    .array(z.enum(["LC", "CG", "JM", "BU", "AH", "BD", "MM", "BK"]))
-    .nonempty(),
-  summary: z
-    .string()
-    .min(20, {
-      message: "Must provide a bare minimum of a 20 character summary",
-    }),
-});
-
-export type Runsheet = z.infer<typeof runsheetSchema>;
 export type Exercise = z.infer<typeof exerciseSchema>;
 export type Cardio = z.infer<typeof cardioSchema>;
 export type Workout = z.infer<typeof workoutSchema>;

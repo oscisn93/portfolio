@@ -9,12 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource-variable/oswald": "^5.2.5",
-    "@fontsource/fira-code": "^5.2.6",
-    "@fontsource/pacifico": "^5.2.5",
-    "@fontsource/poppins": "^5.2.6",
+    "@fontsource-variable/oswald": "^5.2.8",
+    "@fontsource/fira-code": "^5.2.7",
+    "@fontsource/pacifico": "^5.2.7",
+    "@fontsource/poppins": "^5.2.7",
     "@octokit/types": "^14.1.0",
-    "astro": "^5.8.1",
-    "octokit": "^5.0.3"
+    "astro": "^5.14.6",
+    "octokit": "^5.0.4"
   }
 }

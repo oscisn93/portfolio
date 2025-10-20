@@ -1,4 +1,5 @@
 ---
+import GHEventCard from "../components/GHEventCard.astro";
 import HeroSection from "../components/HeroSection.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Layout from "../layouts/Layout.astro";
@@ -11,6 +12,9 @@ import { projectsConfig } from "../lib/constants";
     <h2>Projects</h2>
     <div class="projects-container">
       {projectsConfig.map(project => (<ProjectCard project={project} />))}
+    </div>
+    <div>
+      <GHEventCard />
     </div>
   </section>
 </Layout>
